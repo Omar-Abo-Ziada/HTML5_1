@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV Skills using meters</title>
+    <style>
+        meter,p{
+            border-radius: 50%;
+        }
+    </style>
+  </head>
+  <body>
+    
+    <p id="english-skills">
+      English
+      <meter min="0" max="100" low="20" high="80" value="80"></meter>
+    </p>
+     <p id="arabic-skills">
+        Arabic
+        <meter min="0" max="100" low="20" high="80" value="90"></meter>
+      </p>
+      <p id="spanish-skills">
+        Spanish
+        <meter min="0" max="100" low="20" high="80" value="15"></meter>
+      </p>
+
+      <div>
+        Assiut to Menia 
+        <time>2022-09-04 10:00:00AM</time>
+        <time datetime="2022-09-04 13:00:00">4 Sep 2022 10:00:00Am</time>
+    </div>
+
+    
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        meter,progress {
+            width: 200px;
+            height: 100px;
+            display: block;
+        }
+        meter::-webkit-meter-bar {
+  background: none; /* Required to get rid of the default background property */
+  background-color: whiteSmoke;
+  box-shadow: 0 5px 5px -5px #333 inset;
+}
+meter::-webkit-meter-optimum-value {
+    background-color: red;
+
+}
+    </style>
+</head>
+
+<body>
+    <!-- html5 = html +css +js -->
+    <!--new tags &new attribte-->
+    <meter min="0" max="100" value="90" optimum="50" high="70" low="40">
+    </meter>
+    <meter min="0" max="100" value="70"></meter>
+    <br>
+    <!--loading image /ajax-->
+    <progress min="0" max="50" value="0" id="loadProg" ></progress>
+    <input type="button" onclick="t=setInterval(runProgress,500)" value="moveProgress">
+
+    welcome intake front and mobile in <mark>ITI</mark>
+    <strike>1000$</strike>
+    <code>
+       <var> int x;</var>
+        int z=x+1;
+    </code>
+    <div>
+        Assiut to Menia 
+        <time>2022-09-04 10:00:00AM</time>
+        <time datetime="2022-09-04 13:00:00">4 Sep 2022 10:00:00Am</time>
+    </div>
+    <audio controls autoplay >
+        <source src="bgsound.mp3" type="audio/mpeg">
+        <source src="bgsound.wav" type= >
+        your browser not support html5
+    </audio>
+    <br>
+    <!-- <video width="320" height="240"  poster="video/p.png" autoplay muted controls> -->
+    <video width="320" height="240" id="video1" poster="video/p.png">
+        <source src="video/sample.mp4" type="video/mp4">
+        <source src="video/sample.webm" type="video/webm">
+      Your browser does not support the video tag.
+    </video>
+    <br>
+    <input type="button" value="Play" onclick="playVideo()">
+    <input type="button" value="Pause" onclick="PauseVideo()">
+    <script>
+        function playVideo(){
+            //play video
+            document.getElementById("video1").play();
+        }
+        function PauseVideo(){
+            document.getElementById("video1").pause();
+        }
+        var prog=document.getElementById("loadProg");
+        function runProgress()
+        {
+            if(prog.value>=50)  // max value
+                clearInterval(t);
+            prog.value+=10;
+            console.log(prog.value);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="dropDiv" style="width:400px;height: 300px;border:3px solid red" ondrop="mydrop()"
+        ondragover="mydragOver()">
+        drop here
+    </div>
+    <img draggable="true" ondragstart="getelement(this)" src="p.png" id="img1" style="width:90px;height: 90px;">
+    <img draggable="true" ondragstart="getelement(this)" src="asd.jpg" id="img2" style="width:90px;height: 90px;">
+
+    <script>
+        // var imgElement;//=document.getElementById("img1");
+        //step1 call when image start drag
+        function getelement(elem) {
+            //     imgElement=elem;
+            event.dataTransfer.setData("imgId", elem.id);
+        }
+        //step 2 all drop on div
+        function mydragOver() {
+            event.preventDefault();
+        }
+        //step 3 take imag and append it to Div
+        function mydrop() {
+            //console.log(imgElement);
+            var id = event.dataTransfer.getData("imgId");
+            var elem = document.getElementById(id).cloneNode(true);
+            //document.getElementById("dropDiv").appendChild(imgElement);
+            document.getElementById("dropDiv").appendChild(elem);
+            //    event.target 
+        }
+    </script>
+</body>
+
+</html>

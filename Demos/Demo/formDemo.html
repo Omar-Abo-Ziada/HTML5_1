@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            display: block;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div title="div 1"> hello</div>
+    <!--new Attribute add HTML5 (form tags or input tage or any tag)-->
+    <form action="index.html" method="get" onsubmit="test()">
+        <div>
+            <label for="fNAme">first name</label>
+            <input type="text" id="fNAme" name="fName" pattern="[a-zA-Z]{3,}"
+                title="name must be char only and mor ethan 2 chareter">
+        </div>
+        <div>
+            <label for="age">Student Age</label>
+            <input type="number" id="age" name="age" required>
+        </div>
+        <input type="email" name="email">
+
+        <input type="text" name="disabledTxt" disabled value="my disable text">
+        <input type="text" name="readonlyTxt" readonly value="reonly text">
+        <!--list-->
+        <label>NAmes</label>
+        <input type="text" list="names">
+        <datalist id="names">
+            <option>alaa</option>
+            <option>alia</option>
+            <option>ahmed</option>
+            <option>basma</option>
+            <option>basem</option>
+            <option>mohamed</option>
+        </datalist>
+        <!--global data attribute-->
+
+
+        <!-- <input type="checkbox" id="accept">
+        <label for="accept">I agree</label>
+
+        
+        <input type="date">
+        <input type="time">
+        <input type="datetime-local">
+        <input type="month">
+        <input type="year">
+        <input type="search">
+        <input type="color"> -->
+
+        <input type="submit">
+        <input type="reset">
+        <button type="submit"></button>
+
+    </form>
+
+    <img src="p.png" id="img1" data-xyz="babyimage" data-info="any info" onclick="getImgInfo(this)">
+
+    <img src="p.png" id="img2" data-xyz="babyimage" data-info="any info" onclick="getImgInfo(this)">
+    <script>
+        function getImgInfo(elem) {
+            console.log(event.target.id);
+            console.log(elem.src);
+            console.log(elem.getAttribute("data-xyz"));
+            elem.setAttribute("data-xyz", "new DEcsciption")
+
+        }
+        console.log(document.getElementsByName("readonlyTxt"))
+        function test() {
+            // if(invalid){
+            //     event.preventDefault();
+            // }
+        }
+    </script>
+</body>
+
+</html>

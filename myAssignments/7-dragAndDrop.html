@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drag and Drop</title>
+    <style>
+      #container-div {
+        width: 50%;
+        height: 300px;
+        background-color: aquamarine;
+        border: 5px dotted red;
+        margin: auto;
+      }
+      img{
+        width: 50px;
+        height: 50px;
+        border-radius: 10%;
+        margin-left:5px ;
+      }
+    </style>
+  </head>
+  <body>
+    <div 
+    id="container-div" 
+    ondrop="imageDrop()" 
+    ondragover="prevntingDefault()"
+    >
+   </div>
+    <img
+      id="image1"
+      src="computer-logo-android-android-code-apps-bugdroid-programming-icon-997x1024-6n1f7c6y.png"
+      alt="computer logo"
+      draggable="true"
+      ondragstart="getElement(this)"
+    />
+    <img
+    id="image2"
+     src="Earth.jpeg" 
+     alt="planet earth" 
+     draggable="true"
+     ondragstart="getElement(this)"
+     />
+     <img
+     id="image3"
+      src="Facebook-icon.png" 
+      alt="planet earth" 
+      draggable="true"
+      ondragstart="getElement(this)"
+      />
+
+    <script>
+        function getElement(htmlElement)
+        {
+            event.dataTransfer.setData("imageID",htmlElement.id);
+        }
+
+        function prevntingDefault()
+        {
+            event.preventDefault();
+        }
+
+        function imageDrop()
+        {
+            var ID = event.dataTransfer.getData("imageID");
+            var element = document.getElementById(ID).cloneNode(true);
+            document.getElementById("container-div").appendChild(element);
+        }
+
+    </script>
+  </body>
+</html>
